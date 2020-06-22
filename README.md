@@ -7,3 +7,9 @@ A React pure frame build up from nothing
 start: <br/>
 npm start<br/>
 npm build
+
+master分支，适合用于桌面页面
+master for desktop
+
+frame分支，适合用于npm组件
+frame for npm frame
