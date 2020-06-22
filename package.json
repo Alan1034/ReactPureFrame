@@ -1,7 +1,17 @@
 {
+  "name": "react-pure-frame",
+  "main": "dist/bundle.js",
+  "author": {
+    "name": "陈德立",
+    "email": "419287484@qq.com"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode development",
+    "build-production": "webpack --mode production"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
@@ -16,7 +26,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
