@@ -8,9 +8,16 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: { presets: ['@babel/preset-env']}
+        exclude: /node_modules/,
+        use: [
+          "thread-loader",// 多线程编译
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        ],
       },
       {
         test: /\.css$/,
