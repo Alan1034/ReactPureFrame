@@ -35,7 +35,8 @@ module.exports = {
     contentBase: path.join(__dirname, "public"),
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
-    hot: true
+    hot: true,
+    open: true, //自动打开浏览器
   },
-  plugins:[new webpack.HotModuleReplacementPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
