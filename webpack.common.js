@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
-  mode: "development",
+  // mode: "development" | "production",
   module: {
     rules: [
       {
@@ -30,13 +30,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
     filename: "bundle.js"
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "public"),
-    port: 3000,
-    publicPath: "http://localhost:3000/dist/",
-    hot: true,
-    open: true, //自动打开浏览器
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
 };
