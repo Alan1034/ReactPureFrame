@@ -77,6 +77,15 @@ module.exports = {
           }
         }, 'less-loader']
       },
+      // {
+      //   test: /\.(sa|sc|c)ss$/,
+      //   use: [
+      //     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+      //     'css-loader',
+      //     'postcss-loader',
+      //     'sass-loader',
+      //   ],
+      // },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: {
