@@ -42,7 +42,9 @@
     "typescript": "^5.9.3",
     "vite": "^7.1.9",
     "vite-plugin-image-optimizer": "^2.0.2",
-    "vite-plugin-javascript-obfuscator": "^3.1.0"
+    "vite-plugin-javascript-obfuscator": "^3.1.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "tailwindcss": "^4.1.14"
   },
   "repository": {
     "type": "git",
@@ -52,6 +54,7 @@
   "peerDependencies": {
     "react": ">=19.0.0"
   },
+  "dependencies": {},
   "module": "./dist/index.js",
   "exports": {
     ".": {
