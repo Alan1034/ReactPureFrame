@@ -1,32 +1,67 @@
 {
   "name": "react-pure-frame",
-  "main": "dist/bundle.js",
+  "main": "./dist/index.umd.cjs",
   "author": {
     "name": "陈德立",
     "email": "419287484@qq.com"
   },
-  "files": [
-    "dist"
+  "license": "MPL",
+  "type": "module",
+  "keywords": [
+    "frame",
+    "react",
+    "npm"
   ],
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode development",
-    "build-production": "webpack --mode production"
+    "build": "cross-env CURRENT_ENV=prod run-p type-check && run-p build-only",
+    "test:e2e": "playwright test",
+    "build-only": "vite build",
+    "type-check": "tsc --noEmit -p tsconfig.json --composite false",
+    "link": "tsx script/link.ts && yarn link",
+    "unlink": "tsx script/unlinkModule.ts && yarn unlink && run-p build",
+    "linkNode": "tsx script/linkNode.ts && yarn link && run-p dev",
+    "unlinkNode": "tsx script/unlinkNode.ts && yarn unlink && run-p buildts",
+    "dev": "tsc -w -p .",
+    "buildts": "rimraf dist && tsc -p ."
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.6.0",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.2",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "@vitejs/plugin-react": "^5.0.4",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "chalk": "^5.6.2",
+    "cross-env": "^10.1.0",
+    "less": "^4.4.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "sass-embedded": "^1.93.2",
+    "svgo": "^4.0.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-image-optimizer": "^2.0.2",
+    "vite-plugin-javascript-obfuscator": "^3.1.0"
   },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alan1034/VueNpmFrame.git"
+  },
+  "typings": "./dist/index.d.ts",
+  "peerDependencies": {
+    "react": ">=19.0.0"
+  },
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    },
+    "./style": "./dist/index.css"
+  },
+  "files": [
+    "/dist"
+  ]
 }
