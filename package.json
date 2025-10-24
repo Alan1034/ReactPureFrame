@@ -17,12 +17,13 @@
     "test:e2e": "playwright test",
     "build-only": "vite build",
     "type-check": "tsc --noEmit -p tsconfig.json --composite false",
-    "link": "tsx script/link.ts && yarn link",
-    "unlink": "tsx script/unlinkModule.ts && yarn unlink && run-p build",
-    "linkNode": "tsx script/linkNode.ts && yarn link && run-p dev",
-    "unlinkNode": "tsx script/unlinkNode.ts && yarn unlink && run-p buildts",
+    "link": "tsx script/link.ts && yarn link && pnpm link",
+    "unlink": "tsx script/unlinkModule.ts && yarn unlink && pnpm unlink && run-p build",
+    "linkNode": "tsx script/linkNode.ts && yarn link && pnpm link && run-p dev",
+    "unlinkNode": "tsx script/unlinkNode.ts && yarn unlink && pnpm unlink && run-p buildts",
     "dev": "tsc -w -p .",
-    "buildts": "rimraf dist && tsc -p ."
+    "buildts": "rimraf dist && tsc -p .",
+    "unlinkSetting": "tsx script/unlink.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",
