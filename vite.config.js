@@ -56,7 +56,7 @@ export default defineConfig(({ command, mode }) => {
       alias: {
         '@': resolve('./src'),//路径化名
       },
-
+      dedupe: ['react', 'react-dom'],
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
     },
 
