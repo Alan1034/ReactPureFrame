@@ -54,7 +54,7 @@ export default defineConfig(({ command, mode }) => {
     },
     resolve: {
       alias: {
-        '@': resolve('src'),//路径化名
+        '@': resolve('./src'),//路径化名
       },
 
       extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],

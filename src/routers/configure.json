@@ -1,0 +1,10 @@
+{
+  "routersLibrary": [
+    {
+      "pathKey": "../views/form/index.tsx",
+      "path": "/form",
+      "name": "表单",
+      "icon": "dashboard"
+    }
+  ]
+}

@@ -1,10 +1,17 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client'
-
-import App from "./App.js";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import { registerServiceWorker } from '@/utils/serviceWorker'
+import { router } from '@/routers'
 import "./global.css";
+
+
+registerServiceWorker()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
-  </StrictMode>
+    <Suspense fallback={<div className="skeleton-loader">加载中...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  </StrictMode >
 );
