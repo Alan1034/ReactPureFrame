@@ -57,7 +57,6 @@ export default defineConfig(({ command, mode }) => {
         '@': resolve('./src'),//路径化名
       },
       dedupe: ['react', 'react-dom'],
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
     },
 
     plugins: [
